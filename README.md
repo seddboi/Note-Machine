@@ -8,7 +8,7 @@ Note Machine is exactly what the title describes it to be... a Note Machine! Thi
 The uses for Note Machine are endless!
 
 ## Development
-This application was created based on Express.js. Instances of api creation using the easy data management provided by Express.js was what made this application possible.
+This application was created based on Express.js. Instances of api creation using the easy data management provided by Express.js was what made this application possible. Various Node modules were utlized to assist with organization, such as: FileScript, Nodemon, and even UUID to keep track of entries and deletions made.
 
 ## How to Install 
 This program has been deployed to Heroku for your benefit... no extra installation is necessary! Just click the link below to never lose a note again!
