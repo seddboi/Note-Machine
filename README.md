@@ -1,5 +1,7 @@
 # Welcome to Note Machine!
 
+<!-- insert video of fucntioning program here -->
+
 ## Introduction
 Note Machine is exactly what the title describes it to be... a Note Machine! This allows you to take simple notes to keep track of whatever crosses your mind, or if you just need to plan out a great way to keep track of things. 
 
@@ -9,7 +11,9 @@ The uses for Note Machine are endless!
 This application was created based on Express.js. Instances of api creation using the easy data management provided by Express.js was what made this application possible.
 
 ## How to Install 
-This program has been deployed to Heroku for your benefit... no extra installation is necessary!
+This program has been deployed to Heroku for your benefit... no extra installation is necessary! Just click the link below to never lose a note again!
+
+Live Link: 
 
 If cloned and ran on local device:
 - STEP 1: Open up integrated terminal prompt
