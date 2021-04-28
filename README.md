@@ -1,6 +1,7 @@
 # Welcome to Note Machine!
 
 <!-- insert video of fucntioning program here -->
+![](https://github.com/seddboi/Note-Machine/blob/main/Note%20Taker.gif)
 
 ## Introduction
 Note Machine is exactly what the title describes it to be... a Note Machine! This allows you to take simple notes to keep track of whatever crosses your mind, or if you just need to plan out a great way to keep track of things. 
