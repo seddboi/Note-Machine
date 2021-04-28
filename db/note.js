@@ -17,20 +17,26 @@ class Note {
     return this.allNotes().then((notes) => {
       let stringNotes = JSON.stringify(notes);
       // loop through object notes
-      for (x of notes) {
+      for (note of notes) {
         // tests if selectedNote is within givenNotes
-        let givenNotes = notes.id;
+        let givenNotes = stringNotes.id;
         let selectedNote = x.id;
         // console.log(givenNotes);
         // console.log(selectedNote);
         if (selectedNote == givenNotes) {
-          console.log('gotcha');
+          // console.log('gotcha');
+          
+          fs.writeFile('./db/db.json', stringNotes, (err) => {
+            console.log(err);
+            console.log('Note has been removed');
+          })
+          
         }
       }
     })
   };
 
-  update(newNote) {
+  add(newNote) {
     return this.allNotes().then((notes) => {
       let entered = JSON.parse(newNote);
       let previousNotes = notes;

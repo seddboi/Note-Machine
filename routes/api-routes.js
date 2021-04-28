@@ -21,7 +21,7 @@ router.post('/notes', (req, res) => {
     let enteredNotes = JSON.stringify(req.body);
     
     // this then updates the enteredNotes and applies them to the json
-    note.update(enteredNotes)
+    note.add(enteredNotes)
     .then( (newNotes) => {
         res.json(newNotes)
     })
@@ -33,14 +33,18 @@ router.delete('/notes/:id', (req, res) => {
 
     note.allNotes()
     .then( (gatheredNotes) => {
+        console.log('gatheredNotes', gatheredNotes);
+
         for (x of gatheredNotes) {
             if (x.id == selectedNote) {
-
                 // this cuts out the selected option and restrings the rest of the options avaialble
                 let appliedCutoff = gatheredNotes.splice(gatheredNotes.indexOf(x), 1);
+                console.log(appliedCutoff);
+
+                console.log('-----------------------------')
                 // let updatedNotes = JSON.stringify(appliedCutoff);
                 
-                note.remove(appliedCutoff)
+                note.remove(gatheredNotes)
                 .then( (newNotes) => {
                     res.json(newNotes);
                 });
