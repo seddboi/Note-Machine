@@ -14,7 +14,7 @@ This application was created based on Express.js. Instances of api creation usin
 ## How to Install 
 This program has been deployed to Heroku for your benefit... no extra installation is necessary! Just click the link below to never lose a note again!
 
-Live Link: 
+Live Link: https://note-machine.herokuapp.com/
 
 If cloned and ran on local device:
 - STEP 1: Open up integrated terminal prompt
