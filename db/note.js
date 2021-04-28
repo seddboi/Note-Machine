@@ -15,13 +15,16 @@ class Note {
 
   remove(note) {
     return this.allNotes().then((notes) => {
-      // loop through object
+      let stringNotes = JSON.stringify(notes);
+      // loop through object notes
       for (x of notes) {
-        let selectedNote = JSON.stringify(x);
-        let allNotes = JSON.stringify(notes);
-        // tests if selectedNote is within allNotes
-        if (allNotes.find(selectedNote)) {
-          console.log('gotcha')
+        // tests if selectedNote is within givenNotes
+        let givenNotes = notes.id;
+        let selectedNote = x.id;
+        // console.log(givenNotes);
+        // console.log(selectedNote);
+        if (selectedNote == givenNotes) {
+          console.log('gotcha');
         }
       }
     })

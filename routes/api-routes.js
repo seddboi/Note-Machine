@@ -17,12 +17,9 @@ router.get('/notes', (req, res) => {
 });
 
 router.post('/notes', (req, res) => {
+    req.body.id = createID;
     let enteredNotes = JSON.stringify(req.body);
     
-    // creates new unique id and sets it equal to the body of the request given, aka the entered notes
-    let selectedEnteredNote = req.body.id;
-    selectedEnteredNote = createID;
-
     // this then updates the enteredNotes and applies them to the json
     note.update(enteredNotes)
     .then( (newNotes) => {
@@ -32,17 +29,27 @@ router.post('/notes', (req, res) => {
 
 router.delete('/notes/:id', (req, res) => {
     // assign a note to variable by its id from 'update' method
-    let selectedNoteID = req.params.id;
+    let selectedNote = req.params.id;
 
     note.allNotes()
     .then( (gatheredNotes) => {
         for (x of gatheredNotes) {
-            let iteratedID = x.id;
-            if (iteratedID === selectedNoteID) {
+            if (x.id == selectedNote) {
+
+                // this cuts out the selected option and restrings the rest of the options avaialble
+                let appliedCutoff = gatheredNotes.splice(gatheredNotes.indexOf(x), 1);
+                // let updatedNotes = JSON.stringify(appliedCutoff);
                 
+                note.remove(appliedCutoff)
+                .then( (newNotes) => {
+                    res.json(newNotes);
+                });
+                // .then( (gatheredNotes) => {
+                //     res.json(gatheredNotes)
+                // })
             }
         }
-    })
+    });
 })
 
 // let collectedNotes = JSON.parse(fs.readFileSync('db/db.json', 'utf8'));
