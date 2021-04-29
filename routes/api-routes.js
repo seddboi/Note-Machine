@@ -33,15 +33,16 @@ router.delete('/notes/:id', (req, res) => {
 
     note.allNotes()
     .then( (gatheredNotes) => {
-        console.log('gatheredNotes', gatheredNotes);
+        // console.log('gatheredNotes', gatheredNotes);
 
-        for (x of gatheredNotes) {
+        for ([i, x] of gatheredNotes.entries()) {
+            console.log(x);
             if (x.id == selectedNote) {
                 // this cuts out the selected option and restrings the rest of the options avaialble
-                let appliedCutoff = gatheredNotes.splice(gatheredNotes.indexOf(x), 1);
-                console.log(appliedCutoff);
+                let appliedCutoff = gatheredNotes.splice(i, 1);
+                // console.log(appliedCutoff);
 
-                console.log('-----------------------------')
+                // console.log('-----------------------------')
                 // let updatedNotes = JSON.stringify(appliedCutoff);
                 
                 note.remove(gatheredNotes)

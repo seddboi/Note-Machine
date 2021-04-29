@@ -15,24 +15,23 @@ class Note {
 
   remove(note) {
     return this.allNotes().then((notes) => {
-      let stringNotes = JSON.stringify(notes);
+      let stringNotes = JSON.stringify(note);
       // loop through object notes
-      for (note of notes) {
-        // tests if selectedNote is within givenNotes
-        let givenNotes = stringNotes.id;
-        let selectedNote = x.id;
-        // console.log(givenNotes);
-        // console.log(selectedNote);
-        if (selectedNote == givenNotes) {
-          // console.log('gotcha');
+      // for (x of notes) {
+      //   // tests if selectedNote is within givenNotes
+      //   let givenNotes = notes.id;
+      //   let selectedNote = x.id;
+        
+      //   if (selectedNote == givenNotes) {
+      //     console.log(givenNotes);
+      //     console.log(selectedNote);
+      //     console.log('gotcha');
           
-          fs.writeFile('./db/db.json', stringNotes, (err) => {
-            console.log(err);
-            console.log('Note has been removed');
-          })
+      fs.writeFile('./db/db.json', stringNotes, (err) => {
+        console.log(err);
+        console.log('Note has been removed');
+      });
           
-        }
-      }
     })
   };
 
